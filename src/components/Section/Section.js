@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import Statistics from '../Statistics/Statistics';
-// import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 
 const Section = ({ title, children }) => (
   <>

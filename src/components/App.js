@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import Section from './Section/Section';
 import Statistics from './Statistics/Statistics';
-// import Statistic from './Statistic/Statistic';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Notification from './Notification/Notification';
 
 export default class App extends Component {
-  // static defaultProps = {
-  //   step: 1,
-  // };
-
-  // static propTypes = {
-  //   step: PropTypes.number,
-  // };
-
   state = {
     good: 0,
     neutral: 0,
@@ -30,8 +20,8 @@ export default class App extends Component {
 
   countTotalFeedback = () => {
     const likes = Object.values(this.state);
-    const feedback = likes.reduce((acc, value) => acc + value, 0);
-    return feedback;
+    const totalfeedback = likes.reduce((acc, value) => acc + value, 0);
+    return totalfeedback;
   };
 
   countPositiveFeedbackPercentage = () => {
@@ -45,10 +35,7 @@ export default class App extends Component {
     return (
       <div>
         <Section title="Please leave feedback">
-          <FeedbackOptions
-            // options={}
-            onLeaveFeedback={this.handleIncrement}
-          />
+          <FeedbackOptions onLeaveFeedback={this.handleIncrement} />
           {this.countTotalFeedback() > 0 ? (
             <Statistics
               good={good}
